@@ -1,28 +1,27 @@
 <template>
-  <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
-  </div>
+  <v-app>
+    <SimpleWeather :date="obj.date" :temp="obj.temp" :desc="obj.desc" :img="obj.img" />
+  </v-app>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import SimpleWeather from "./components/SimpleWeather";
 
 export default {
-  name: 'App',
-  components: {
-    HelloWorld
-  }
-}
-</script>
+  name: "App",
 
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
-</style>
+  components: {
+    SimpleWeather
+  },
+
+  data: () => ({
+    //
+    obj: {
+      date: "31/05/2020",
+      temp: "35º",
+      desc: "Predominantemente ensolarado.",
+      img: "https://vuejs.org/images/logo.png"
+    }
+  })
+};
+</script>
